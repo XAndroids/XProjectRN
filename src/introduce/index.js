@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {View, Text} from 'react-native';
 
-type Props = {};
-export default class Introduce extends Component<Props> {
+export default class Introduce extends Component {
     render() {
         return (
             <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

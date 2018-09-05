@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation';
 
-import Login from './src/login/login';
-import Introduce from './src/introduce/introduce';
+import Login from './src/login/index';
+import Introduce from './src/introduce/index';
 
 const RootStack = createStackNavigator(
     {
@@ -10,6 +10,7 @@ const RootStack = createStackNavigator(
         Introduce: {screen: Introduce},
     },
     {
+        headerMode: 'none',
         initialRouteName: 'Login',
     }
 );
