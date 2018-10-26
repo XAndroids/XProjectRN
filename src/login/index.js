@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
-import {StyleSheet, Image, ImageBackground, TouchableOpacity, Text} from 'react-native';
+import {StyleSheet, Image, ImageBackground, TouchableOpacity, Text, Alert} from 'react-native';
 
 export default class Login extends Component {
+
+    onPressLogin() {
+        console.log('on press login');
+        Alert.alert('You tapped the button!')
+    }
 
     render() {
         return (
             <ImageBackground style={styles.container} source={require('../../img/login_background.png')}>
                 <Image source={require('../../img/login_icon.png')}/>
-                <TouchableOpacity style={[styles.button, {marginTop: 40, backgroundColor: '#01A3AE'}]}>
+                <TouchableOpacity style={[styles.button, {marginTop: 40, backgroundColor: '#01A3AE'}]}
+                                  onPress={this.onPressLogin}>
                     <Text style={styles.text}>LOGIN TO FEEDLY</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button, {marginTop: 8, backgroundColor: '#AAAAAA'}]}
