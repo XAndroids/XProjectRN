@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, ImageBackground, TouchableOpacity, Text, Alert } from 'react-native';
 
+/**
+ * 登录页面
+ */
 export default class Login extends Component {
 
     onPressLogin() {
