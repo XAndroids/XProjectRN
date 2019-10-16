@@ -1,10 +1,9 @@
 import React from 'react';
-import Login from '../index';
-
 import renderer from 'react-test-renderer';
 
+import Login from '../index';
 
-test('renders correctly', () => {
+test('index Snapshot test correctly', () => {
     const tree = renderer.create(<Login />).toJSON();
     expect(tree).toMatchSnapshot();
 });
