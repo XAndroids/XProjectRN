@@ -17,11 +17,11 @@ export default class Login extends Component {
                 <Image source={require('../../img/login_icon.png')} />
                 <TouchableOpacity style={[styles.button, { marginTop: 40, backgroundColor: '#01A3AE' }]}
                     onPress={this.onPressLogin}>
-                    <Text style={styles.text}>LOGIN TO FEEDLY</Text>
+                    <Text  testID='login' style={styles.text}>LOGIN TO FEEDLY</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button, { marginTop: 8, backgroundColor: '#AAAAAA' }]}
                     onPress={() => this.props.navigation.navigate('Introduce')}>
-                    <Text style={styles.text}>TRY THINGS OUT</Text>
+                    <Text testID='try' style={styles.text}>TRY THINGS OUT</Text>
                 </TouchableOpacity>
             </ImageBackground>
         );
