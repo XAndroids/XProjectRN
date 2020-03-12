@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native';
+import React, {Component} from 'react'
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
 import XIndicator from '../component/XIndicator';
-import { getWindowsWidth, getWindowsHeight } from '../utils/Devices';
+import {getWindowsWidth, getWindowsHeight} from '../utils/Devices';
 
 /**
  * 介绍页面底部栏，负责ViewPager指示器和导航按钮
@@ -20,12 +20,11 @@ export default class IntroduceBar extends Component {
     render() {
         console.log('Bar render');
 
-        const bottomBarHeight = 50;
-
         return (
-            <View style={{flexDirection: 'row'}}>
+            <View style={[this.props.style, {flexDirection: 'row'}]}>
                 {this.renderLeftButton()}
-                <XIndicator style={{ flex: 1 }} circleCount={this.props.showPageCount} currentIndex={this.props.showPageIndex} />
+                <XIndicator style={{flex: 1}} circleCount={this.props.showPageCount}
+                            currentIndex={this.props.showPageIndex}/>
                 {this.renderRightButton()}
             </View>
         )
@@ -34,13 +33,13 @@ export default class IntroduceBar extends Component {
     renderLeftButton() {
         if (this.props.showPageIndex === 0 || this.props.showPageIndex === 1) {
             return (
-                <TouchableOpacity style={{ flex: 1 }} tonPress={this.onSkipPress}>
-                    <Text>Skip</Text>
+                <TouchableOpacity style={{flex: 1}} tonPress={this.onSkipPress}>
+                    <Text>Skip1</Text>
                 </TouchableOpacity>
             );
         } else if (this.props.showPageIndex === 2) {
             return (
-                <View style={{ flex: 1 }} />
+                <View style={{flex: 1}}/>
             );
         }
     }
@@ -48,13 +47,15 @@ export default class IntroduceBar extends Component {
     renderRightButton() {
         if (this.props.showPageIndex === 0 || this.props.showPageIndex === 1) {
             return (
-                <TouchableOpacity style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }} onPress={this.onNextPress}>
+                <TouchableOpacity style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}
+                                  onPress={this.onNextPress}>
                     <Text>Next</Text>
                 </TouchableOpacity>
             );
         } else if (this.props.showPageIndex === 2) {
             return (
-                <TouchableOpacity style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }} onPress={this.onDonePress} >
+                <TouchableOpacity style={{flex: 1, flexDirection: 'row', justifyContent: 'flex-end'}}
+                                  onPress={this.onDonePress}>
                     <Text>Done</Text>
                 </ TouchableOpacity>
             );
@@ -79,9 +80,9 @@ IntroduceBar.propTypes = {
     showPageIndex: PropTypes.number,
     showPageCount: PropTypes.number,
     onNextPress: PropTypes.func
-}
+};
 
 IntroduceBar.defaultProps = {
     showPageIndex: 0,
     showPageCount: 0,
-}
+};

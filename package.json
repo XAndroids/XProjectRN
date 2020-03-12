@@ -28,7 +28,7 @@
       "<rootDir>/setup-tests.js"
     ]
   },
-  "detox" : {
+  "detox": {
     "test-runner": "mocha",
     "runner-config": "e2e/mocha.opts",
     "configurations": {

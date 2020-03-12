@@ -24,8 +24,8 @@ export default class IntroducePage extends Component {
 
     /**
    * 渲染文案，iOS平台Text无法通过textAlignVertical实现字体居中，则使用View容器包裹实现
-   * @param {显示的文案} text 
-   * @param {显示的文案字体大小} fontSize 
+   * @param {显示的文案} text
+   * @param {显示的文案字体大小} fontSize
    */
     renderText(text, fontSize) {
         if (Platform.OS === 'ios') {
@@ -46,7 +46,7 @@ IntroducePage.propTypes = {
     image: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string.isRequired,
-}
+};
 
 const styles = StyleSheet.create({
     page: {
@@ -66,5 +66,5 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
     },
-})
+});
 
