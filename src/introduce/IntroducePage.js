@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { View, Text, Image, StyleSheet, Platform } from 'react-native';
+import React, {Component} from 'react'
+import {View, Text, Image, StyleSheet, Platform} from 'react-native';
 import PropTypes from 'prop-types';
-import { getWindowsWidth, getWindowsHeight } from '../utils/Devices';
+import {getWindowsWidth, getWindowsHeight} from '../utils/Devices';
 
 /**
  * 定义了Introduce页面ViewPager子页面的内容
@@ -15,27 +15,33 @@ export default class IntroducePage extends Component {
                 width: getWindowsWidth(),
                 height: getWindowsHeight()
             }]}>
-                {this.renderText(this.props.title, 28)}
-                <Image style={styles.image} source={require('../../img/introduce_icon1.png')} />
-                {this.renderText(this.props.content, 16)}
+                {this.renderText(this.props.title, 28, 'center', 'center')}
+                <Image style={{flex: 1}} source={this.props.image}/>
+                {this.renderText(this.props.content, 16, 'flex-end', 'bottom')}
+                <View style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                    height: 1,
+                    width: getWindowsWidth(),
+                    marginBottom: 50,
+                    marginTop: 20
+                }}/>
             </View>
         )
     }
 
-    /**
-   * 渲染文案，iOS平台Text无法通过textAlignVertical实现字体居中，则使用View容器包裹实现
-   * @param {显示的文案} text
-   * @param {显示的文案字体大小} fontSize
-   */
-    renderText(text, fontSize) {
+    renderText(text, fontSize, justifyContent, textAlignVertical) {
         if (Platform.OS === 'ios') {
             return (
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <Text style={[styles.text, { fontSize: fontSize }]}>{text}</Text>
+                //渲染文案，iOS平台Text无法通过textAlignVertical实现字体居中，则使用View容器包裹实现
+                <View style={{flex: 1, justifyContent: justifyContent}}>
+                    <Text style={[styles.text, {fontSize: fontSize}]}>{text}</Text>
                 </View>);
         } else {
             return (
-                <Text style={[styles.text, { fontSize: fontSize }]}>{text}</Text>
+                <Text style={[styles.text, {
+                    fontSize: fontSize,
+                    textAlignVertical: textAlignVertical
+                }]}>{text}</Text>
             );
         }
     }
@@ -43,7 +49,7 @@ export default class IntroducePage extends Component {
 
 IntroducePage.propTypes = {
     title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.number.isRequired,
     content: PropTypes.string.isRequired,
     backgroundColor: PropTypes.string.isRequired,
 };
@@ -55,16 +61,12 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
+        textAlign: 'center',
         ...Platform.select({
             android: {
-                flex: 1,
-                textAlign: 'center',
-                textAlignVertical: 'center',
+                flex: 1
             },
         }),
-    },
-    image: {
-        flex: 1,
-    },
+    }
 });
 

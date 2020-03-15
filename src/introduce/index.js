@@ -12,20 +12,23 @@ export default class Introduce extends Component {
     constructor(props) {
         super(props);
 
+        //异常：Calls to require expect exactly 1 string literal argument
+        //require()"前移"到数据源，往后传递资源id
+        //参考：https://stackoverflow.com/questions/51994329/calls-to-require-expect-exactly-1-string-literal-argument
         this.pages = [
             {
                 title: 'Welcome',
-                image: '../../img/introduce_icon1.png',
+                image: require('../../img/introduce_icon1.png'),
                 content: 'Thank you for installing Paperboy.What makes Paperboy different form other news reader apps is its simplicity and elegant design.',
                 backgroundColor: '#01A3AE',
             }, {
                 title: 'Customizations',
-                image: '../../img/introduce_icon2.png',
+                image: require('../../img/introduce_icon2.png'),
                 content: 'We believe that each user is unique and hence several customization options are provided to suit different reading styles.To customize please visit the settings page.',
                 backgroundColor: '#4CAF50',
             }, {
                 title: 'Reading pattern learner',
-                image: '../../img/introduce_icon3.png',
+                image: require('../../img/introduce_icon3.png'),
                 content: 'The home screen tiles will automatically reaarrange based on reading patterns for better user experence.All data is stored locally kepping in mind user privacy.',
                 backgroundColor: '#673AB8',
             }
@@ -47,7 +50,6 @@ export default class Introduce extends Component {
         //FIXME 是否能把平台差异封装在ViewPager控件中
         if (Platform.OS === 'android') {
             this.viewPagerElement.setPage(showPageIndex);
-            // this.viewPagerElement.scrollTo({ x: getWindowsWidth() * showPageIndex, y: 0 });
         } else {
             this.viewPagerElement.scrollTo({x: getWindowsWidth() * showPageIndex, y: 0});
         }

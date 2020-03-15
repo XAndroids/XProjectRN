@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { StyleSheet, ScrollView } from "react-native";
+import React, {Component} from 'react'
+import {ScrollView} from "react-native";
 import PropTypes from 'prop-types';
-import { getWindowsWidth } from '../../utils/Devices';
-import { styles } from './styles'
+import {getWindowsWidth} from '../../utils/Devices';
+import {styles} from './styles'
 
 export default class XViewPager extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class XViewPager extends Component {
             <ScrollView
                 ref={this.props.viewPagerRef}
                 style={[styles.viewpager, this.props.style]}
-                contentOffset={{ x: getWindowsWidth() * this.props.initPageIndex, y: 0 }}
+                contentOffset={{x: getWindowsWidth() * this.props.initPageIndex, y: 0}}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 pagingEnabled={true}
@@ -37,8 +37,8 @@ XViewPager.propTypes = {
     showPageIndex: PropTypes.number,
     onPageSwitch: PropTypes.func
 
-}
+};
 
 XViewPager.defaultProps = {
     showPageIndex: 0
-}
+};
