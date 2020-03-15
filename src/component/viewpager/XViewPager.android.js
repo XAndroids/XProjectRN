@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ViewPagerAndroid, View } from "react-native";
+import { ViewPagerAndroid, View } from "react-native";
 import PropTypes from 'prop-types';
 import { styles } from './styles'
 
@@ -38,8 +38,8 @@ XViewPager.propTypes = {
     showPageIndex: PropTypes.number,
     onPageSwitch: PropTypes.func
 
-}
+};
 
 XViewPager.defaultProps = {
     showPageIndex: 0
-}
+};

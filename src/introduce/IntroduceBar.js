@@ -35,7 +35,7 @@ export default class IntroduceBar extends Component {
     renderLeftButton() {
         if (this.props.showPageIndex === 0 || this.props.showPageIndex === 1) {
             return (
-                <TouchableOpacity style={styles.touchable} tonPress={this.onSkipPress}>
+                <TouchableOpacity style={styles.touchable} onPress={this.onSkipPress}>
                     <Text style={[styles.text, {alignSelf: 'flex-start', marginLeft: 30}]}>SKIP</Text>
                 </TouchableOpacity>
             );
