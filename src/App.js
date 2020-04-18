@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
-import {createStackNavigator} from 'react-navigation';
+import React, {Component} from 'react'
+import {createStackNavigator} from 'react-navigation'
 
-import Login from './src/login/index';
-import Introduce from './src/introduce/index';
-import Main from './src/main/index';
-import Publisher from './src/publisher/index'
+import {Login, Introduce, Main, Publisher} from './pages'
 
 const RootStack = createStackNavigator(
     {

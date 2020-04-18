@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions } from 'react-native'
 
 function getWindowsWidth() {
     return Dimensions.get('window').width;

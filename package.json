@@ -7,16 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "prop-types": "15.7.2",
     "react": "16.4.1",
     "react-dom": "^16.10.2",
     "react-native": "0.56.0",
-    "react-navigation": "^2.12.1",
-    "prop-types": "15.7.2"
+    "react-navigation": "^2.12.1"
   },
   "devDependencies": {
     "babel-jest": "23.4.2",
     "babel-preset-react-native": "5.0.2",
-    "detox": "^14.8.0",
+    "detox": "14.9.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jest": "23.5.0",
@@ -34,11 +34,18 @@
     "runner-config": "e2e/mocha.opts",
     "configurations": {
       "android.emu.debug": {
-        "binaryPath": "/Users/qitmac0000562/XCodeProjects/Xs/XProjectReact/android/app/build/outputs/apk/app-debug.apk",
-        "testBinaryPath": "/Users/qitmac0000562/XCodeProjects/Xs/XProjectReact/android/app/build/outputs/apk/app-debug-androidTest.apk",
+        "binaryPath": "android/app/build/outputs/apk/app-debug.apk",
+        "testBinaryPath": "android/app/build/outputs/apk/app-debug-androidTest.apk",
         "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
         "type": "android.emulator",
-        "name": "Pixel_3_API_28"
+        "name": "Pixel_XL_API_28"
+      },
+      "android.att.debug": {
+        "binaryPath": "android/app/build/outputs/apk/app-debug.apk",
+        "testBinaryPath": "android/app/build/outputs/apk/app-debug-androidTest.apk",
+        "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.attached",
+        "name": "68U5T17A17004871"
       }
     }
   }

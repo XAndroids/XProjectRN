@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { ViewPagerAndroid, View } from "react-native";
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import { ViewPagerAndroid, View } from 'react-native'
+import PropTypes from 'prop-types'
 import { styles } from './styles'
 
-export default class XViewPager extends Component {
+export default class ViewPager extends Component {
     render() {
         return (
             //使用ViewPagerAndroid在Android平台渲染
@@ -34,12 +34,12 @@ export default class XViewPager extends Component {
 }
 
 //FIXME 如何在不同平台复用同样的propTypes、defaultProps和styles
-XViewPager.propTypes = {
+ViewPager.propTypes = {
     showPageIndex: PropTypes.number,
     onPageSwitch: PropTypes.func
 
 };
 
-XViewPager.defaultProps = {
+ViewPager.defaultProps = {
     showPageIndex: 0
 };

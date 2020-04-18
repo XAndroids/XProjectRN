@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet, Platform} from 'react-native';
-import PropTypes from 'prop-types';
-import {getWindowsWidth, getWindowsHeight} from '../utils/Devices';
+import {View, Text, Image, StyleSheet, Platform} from 'react-native'
+import PropTypes from 'prop-types'
+import {getWindowsWidth, getWindowsHeight} from '../../utils'
 
 /**
  * 定义了Introduce页面ViewPager子页面的内容
@@ -9,15 +9,17 @@ import {getWindowsWidth, getWindowsHeight} from '../utils/Devices';
 export default class IntroducePage extends Component {
 
     render() {
+        const {backgroundColor, title, content, image} = this.props;
+
         return (
             <View style={[styles.page, {
-                backgroundColor: this.props.backgroundColor,
+                backgroundColor: backgroundColor,
                 width: getWindowsWidth(),
                 height: getWindowsHeight()
             }]}>
-                {this.renderText(this.props.title, 28, 'center', 'center')}
-                <Image style={{flex: 1}} source={this.props.image}/>
-                {this.renderText(this.props.content, 16, 'flex-end', 'bottom')}
+                {this._renderText(title, 28, 'center', 'center')}
+                <Image style={{flex: 1}} source={image}/>
+                {this._renderText(content, 16, 'flex-end', 'bottom')}
                 <View style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.1)',
                     height: 1,
@@ -29,7 +31,7 @@ export default class IntroducePage extends Component {
         )
     }
 
-    renderText(text, fontSize, justifyContent, textAlignVertical) {
+    _renderText(text, fontSize, justifyContent, textAlignVertical) {
         if (Platform.OS === 'ios') {
             return (
                 //渲染文案，iOS平台Text无法通过textAlignVertical实现字体居中，则使用View容器包裹实现
