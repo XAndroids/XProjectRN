@@ -60,10 +60,12 @@ export default class Publisher extends Component {
         return (
             <View style={styles.container}>
                 {/* 内容和语言选择Modal */}
-                <TypeChoiceModal visible={typeChoiceModalVisible}
-                                 choiceList={typeChoiceList}
-                                 onRequestClose={this._onRequestClose}
-                                 onSelectedTypeChanged={this._onSelectedTypeChanged}/>
+                <TypeChoiceModal
+                    testID={'publisher_modal_typechoice'}
+                    visible={typeChoiceModalVisible}
+                    choiceList={typeChoiceList}
+                    onRequestClose={this._onRequestClose}
+                    onSelectedTypeChanged={this._onSelectedTypeChanged}/>
                 <View style={[styles.container, {flexDirection: 'column', backgroundColor: 'white'}]}>
                     {/* 标题栏 */}
                     <Toolbar title={toolbarTitle} actions={toolbarActions}
@@ -160,7 +162,8 @@ export default class Publisher extends Component {
         SnackBar.show({text: "Fetch " + this.state.publisherList.length + " publishers..."});
     }
 
-    _onRefresh = () => {};
+    _onRefresh = () => {
+    };
 
     _renderPublisherItem = ({item}) => {
         return (

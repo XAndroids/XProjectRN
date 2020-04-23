@@ -18,7 +18,8 @@ export default class TypeChoiceModal extends Component {
         };
 
         return (
-            <Modal visible={this.props.visible}
+            <Modal testID={this.props.testID}
+                   visible={this.props.visible}
                    transparent={true}
                    onRequestClose={this.props.onRequestClose}>
                 <View style={[{
@@ -70,6 +71,7 @@ export default class TypeChoiceModal extends Component {
 }
 
 TypeChoiceModal.propTypes = {
+    testID: PropTypes.string,
     visible: PropTypes.bool,
     choiceList: PropTypes.array,
     onRequestClose: PropTypes.func,

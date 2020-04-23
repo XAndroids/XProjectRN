@@ -8,16 +8,17 @@ export default class Login extends Component {
 
     render() {
         return (
-            <ImageBackground style={styles.container} source={require('../../../img/login_background.png')}>
-                <Image source={require('../../../img/login_icon.png')}/>
+            <ImageBackground testID='loginroot' style={styles.container}
+                             source={require('../../../img/login_background.png')}>
+                <Image stestID='loginbutton' ource={require('../../../img/login_icon.png')}/>
                 <TouchableOpacity testID='loginbutton'
                                   style={[styles.button, {marginTop: 40, backgroundColor: '#01A3AE'}]}
                                   onPress={this._onPressLogin}>
-                    <Text testID='login' style={styles.text}>LOGIN TO FEEDLY</Text>
+                    <Text testID='logintext' style={styles.text}>LOGIN TO FEEDLY</Text>
                 </TouchableOpacity>
                 <TouchableOpacity testID='trybutton' style={[styles.button, {marginTop: 8, backgroundColor: '#AAAAAA'}]}
                                   onPress={() => this.props.navigation.navigate('Introduce')}>
-                    <Text testID='try' style={styles.text}>TRY THINGS OUT</Text>
+                    <Text testID='trytext' style={styles.text}>TRY THINGS OUT</Text>
                 </TouchableOpacity>
             </ImageBackground>
         );
@@ -26,7 +27,6 @@ export default class Login extends Component {
     //加_为私有方法，约定俗成，JS没有规定
     //参考：https://blog.csdn.net/Sonsay/article/details/88845991
     _onPressLogin() {
-        console.log('on press login');
         Alert.alert('You tapped the button!')
     }
 }

@@ -55,7 +55,7 @@ export default class IntroduceBar extends Component {
 
         if (showPageIndex === 0 || showPageIndex === 1) {
             return (
-                <TouchableOpacity style={styles.touchable} onPress={this._onNextPress}>
+                <TouchableOpacity testID={'introduce_button_next'} style={styles.touchable} onPress={this._onNextPress}>
                     <Image style={{alignSelf: 'flex-end', width: 50, height: 50}}
                            source={require('../../../img/introduce_nextbutton_background.png')}/>
                 </TouchableOpacity>
