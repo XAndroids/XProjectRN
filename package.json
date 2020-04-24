@@ -19,6 +19,7 @@
     "detox": "14.9.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "express": "^4.17.1",
     "jest": "23.5.0",
     "mocha": "^6.2.2",
     "react-test-renderer": "16.4.1"

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, FlatList, StyleSheet, Alert, Image} from 'react-native'
 import {TypeChoiceModal, Toolbar, SnackBar} from '../../components'
 import PublisherItem from "./PublisherItem";
-import {toolbarActions, contentChoiceList, languagedChoiceList, publisherList} from "./publisherdata"
+import {toolbarActions} from "./PublisherData"
 
 /**
  * 发布者页面
@@ -21,6 +21,7 @@ export default class Publisher extends Component {
             typeChoiceList: [],
             publisherListRefresh: true,
             publisherList: [],
+            showPublisherList: [],
             contentChoiceList: [],
             languagedChoiceList: []
         };
@@ -35,25 +36,29 @@ export default class Publisher extends Component {
     }
 
     componentDidMount() {
-        //定时Mock返回发布者数据
-        this.timer = setTimeout(
-            () => {
+        fetch('http://localhost:9001/publishers')
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json);
+
                 this.setState({
                     publisherListRefresh: false,
-                    publisherList: publisherList,
-                    contentChoiceList: contentChoiceList,
-                    languagedChoiceList: languagedChoiceList
+                    publisherList: json.publisherList,
+                    showPublisherList: json.publisherList,
+                    contentChoiceList: json.contentChoiceList,
+                    languagedChoiceList: json.languagedChoiceList
                 });
-
-                SnackBar.show({text: "Fetch " + publisherList.length + " publishers..."});
-            },
-            2000
-        );
+                SnackBar.show({text: "Fetch " + json.publisherList.length + " publishers..."});
+            })
+            .catch((error) => console.error(error))
+            .finally(() => {
+                this.setState({publisherListRefresh: false});
+            });
     }
 
     render() {
         const {
-            typeChoiceModalVisible, typeChoiceList, toolbarTitle, toolbarActions, toolBarIsSearch, publisherList,
+            typeChoiceModalVisible, typeChoiceList, toolbarTitle, toolbarActions, toolBarIsSearch, showPublisherList,
             publisherListRefresh
         } = this.state;
 
@@ -73,7 +78,7 @@ export default class Publisher extends Component {
                              onPressBack={this._onPressBack}/>
                     {/* 发布者列表 */}
                     <FlatList
-                        data={publisherList}
+                        data={showPublisherList}
                         renderItem={this._renderPublisherItem}
                         keyExtractor={(item, index) => index.toString()}
                         refreshing={publisherListRefresh}
@@ -129,37 +134,37 @@ export default class Publisher extends Component {
     _onSelectedTypeChanged(item) {
         const {typeId, name} = item;
 
-        let filterPublisherList = [];
+        let showPublisherList = [];
         if (this.state.typeChoiceType === 'content') {
-            publisherList.forEach((publisher) => {
+            this.state.publisherList.forEach((publisher) => {
                 if (publisher.type === typeId) {
-                    filterPublisherList.push(publisher);
+                    showPublisherList.push(publisher);
                 }
             });
-            contentChoiceList.forEach((content) => {
+            this.state.contentChoiceList.forEach((content) => {
                 content.selected = content.typeId === typeId;
             });
         } else {
-            publisherList.forEach((publisher) => {
+            this.state.publisherList.forEach((publisher) => {
                 if (publisher.language === typeId) {
-                    filterPublisherList.push(publisher);
+                    showPublisherList.push(publisher);
                 }
             });
-            languagedChoiceList.forEach((language) => {
+            this.state.languagedChoiceList.forEach((language) => {
                 language.selected = language.typeId === typeId;
             });
         }
 
         this.setState({
             toolbarTitle: name,
-            publisherList: filterPublisherList,
+            showPublisherList: showPublisherList,
             typeChoiceModalVisible: false
         }, () => {
-            console.log("Fetch " + this.state.publisherList.length + " publishers...");
+            console.log("Fetch " + this.state.showPublisherList.length + " publishers...");
             //FIXME 在callback中SnackBar就展示不出来
         });
 
-        SnackBar.show({text: "Fetch " + this.state.publisherList.length + " publishers..."});
+        SnackBar.show({text: "Fetch " + this.state.showPublisherList.length + " publishers..."});
     }
 
     _onRefresh = () => {
@@ -178,8 +183,8 @@ export default class Publisher extends Component {
         //State与不可变对象，参考：https://blog.csdn.net/weixin_39939012/article/details/80876022
         //Object.assign()处理数组，参考：https://www.cnblogs.com/tugenhua0707/p/7436685.html
         let selectedPublisher = null;
-        let tempPublisherList = Object.assign([], this.state.publisherList);
-        tempPublisherList.forEach((publisher) => {
+        let tempShowPublisherList = Object.assign([], this.state.showPublisherList);
+        tempShowPublisherList.forEach((publisher) => {
             if (publisher.publisherId === publisherId) {
                 selectedPublisher = publisher;
                 publisher.isSubscribed = !publisher.isSubscribed;
@@ -187,7 +192,7 @@ export default class Publisher extends Component {
         });
 
         this.setState({
-            publisherList: tempPublisherList
+            showPublisherList: tempShowPublisherList
         });
 
         if (selectedPublisher.isSubscribed) {
