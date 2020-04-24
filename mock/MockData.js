@@ -4,78 +4,63 @@ const contentChoiceList = [
         typeId: 't001',
         type: 'content',
         name: 'Tech',
-        selected: false
     },
     {
         typeId: 't002',
         type: 'content',
         name: 'News',
-        selected: false
     }, {
         typeId: 't003',
         type: 'content',
         name: 'Business',
-        selected: false
     }, {
         typeId: 't004',
         type: 'content',
         name: 'Health',
-        selected: false
     }, {
         typeId: 't005',
         type: 'content',
         name: 'Gaming',
-        selected: false
     }, {
         typeId: 't006',
         type: 'content',
         name: 'Design',
-        selected: false
     }, {
         typeId: 't007',
         type: 'content',
         name: 'Fashion',
-        selected: false
     }, {
         typeId: 't008',
         type: 'content',
         name: 'Cooking',
-        selected: false
     }, {
         typeId: 't009',
         type: 'content',
         name: 'Comics',
-        selected: false
     }, {
         typeId: 't010',
         type: 'content',
         name: 'DIY',
-        selected: false
     }, {
         typeId: 't011',
         type: 'content',
         name: 'Sport',
-        selected: false
     }, {
         typeId: 't012',
         type: 'content',
         name: 'Cinema',
-        selected: false
     }, {
         typeId: 't013',
         type: 'content',
         name: 'Youtube',
-        selected: false
     }, {
         typeId: 't014',
         type: 'content',
         name: 'Funny',
-        selected: false
     }, {
         typeId: 't015',
         type: 'content',
         name: 'Esty',
-        selected: false
     }
 ];
 
@@ -85,17 +70,14 @@ const languagedChoiceList = [
         typeId: 'l001',
         type: 'language',
         name: 'English',
-        selected: true
     }, {
         typeId: 'l002',
         type: 'language',
         name: '日语',
-        selected: false
     }, {
         typeId: 'l003',
         type: 'language',
         name: '中文',
-        selected: false
     }
 ];
 

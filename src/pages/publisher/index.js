@@ -19,6 +19,7 @@ export default class Publisher extends Component {
             typeChoiceModalVisible: false,
             typeChoiceType: '',
             typeChoiceList: [],
+            typeChoiceIndex: -1,
             publisherListRefresh: true,
             publisherList: [],
             showPublisherList: [],
@@ -39,8 +40,6 @@ export default class Publisher extends Component {
         fetch('http://localhost:9001/publishers')
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
-
                 this.setState({
                     publisherListRefresh: false,
                     publisherList: json.publisherList,
@@ -58,7 +57,7 @@ export default class Publisher extends Component {
 
     render() {
         const {
-            typeChoiceModalVisible, typeChoiceList, toolbarTitle, toolbarActions, toolBarIsSearch, showPublisherList,
+            typeChoiceModalVisible, typeChoiceList, typeChoiceIndex, toolbarTitle, toolbarActions, toolBarIsSearch, showPublisherList,
             publisherListRefresh
         } = this.state;
 
@@ -69,6 +68,7 @@ export default class Publisher extends Component {
                     testID={'publisher_modal_typechoice'}
                     visible={typeChoiceModalVisible}
                     choiceList={typeChoiceList}
+                    choiceIndex={typeChoiceIndex}
                     onRequestClose={this._onRequestClose}
                     onSelectedTypeChanged={this._onSelectedTypeChanged}/>
                 <View style={[styles.container, {flexDirection: 'column', backgroundColor: 'white'}]}>
@@ -88,12 +88,6 @@ export default class Publisher extends Component {
         )
     }
 
-    componentWillUnmount() {
-        // 如果存在this.timer，则使用clearTimeout清空。
-        // 如果你使用多个timer，那么用多个变量，或者用个数组来保存引用，然后逐个clear
-        this.timer && clearTimeout(this.timer);
-    }
-
     _onActionSelected(position) {
         let selectedKey = this.state.toolbarActions[position].key;
         if (selectedKey === "001") {
@@ -106,12 +100,15 @@ export default class Publisher extends Component {
             this.setState({
                 typeChoiceModalVisible: true,
                 typeChoiceList: this.state.contentChoiceList,
+                typeChoiceIndex: this.state.typeChoiceType === 'language' ? -1 : this.state.typeChoiceIndex,
                 typeChoiceType: 'content'
             })
+
         } else if (selectedKey === "003" && this.state.languagedChoiceList.length > 0) {
             this.setState({
                 typeChoiceModalVisible: true,
                 typeChoiceList: this.state.languagedChoiceList,
+                typeChoiceIndex: this.state.typeChoiceType === 'content' ? -1 : this.state.typeChoiceIndex,
                 typeChoiceType: 'language'
             })
         }
@@ -131,7 +128,7 @@ export default class Publisher extends Component {
         });
     }
 
-    _onSelectedTypeChanged(item) {
+    _onSelectedTypeChanged(item, index) {
         const {typeId, name} = item;
 
         let showPublisherList = [];
@@ -141,22 +138,17 @@ export default class Publisher extends Component {
                     showPublisherList.push(publisher);
                 }
             });
-            this.state.contentChoiceList.forEach((content) => {
-                content.selected = content.typeId === typeId;
-            });
         } else {
             this.state.publisherList.forEach((publisher) => {
                 if (publisher.language === typeId) {
                     showPublisherList.push(publisher);
                 }
             });
-            this.state.languagedChoiceList.forEach((language) => {
-                language.selected = language.typeId === typeId;
-            });
         }
 
         this.setState({
             toolbarTitle: name,
+            typeChoiceIndex: index,
             showPublisherList: showPublisherList,
             typeChoiceModalVisible: false
         }, () => {

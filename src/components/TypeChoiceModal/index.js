@@ -49,11 +49,12 @@ export default class TypeChoiceModal extends Component {
         );
     }
 
-    _renderItemComponent = ({item}) => {
+    _renderItemComponent = ({item, index}) => {
         return (
-            <TouchableWithoutFeedback onPress={() => this._onTypeItemPress(item)}>
+            <TouchableWithoutFeedback onPress={() => this._onTypeItemPress(item, index)}>
                 <View style={{flexDirection: 'row', height: 47}}>
-                    <RadioButton style={{marginLeft: 23, marginRight: 23}} isSelected={item.selected} size={12}/>
+                    <RadioButton style={{marginLeft: 23, marginRight: 23}} isSelected={this.props.choiceIndex === index}
+                                 size={12}/>
                     <Text style={{
                         flex: 1,
                         color: 'black',
@@ -65,8 +66,8 @@ export default class TypeChoiceModal extends Component {
         );
     };
 
-    _onTypeItemPress(item) {
-        this.props.onSelectedTypeChanged(item);
+    _onTypeItemPress(item, index) {
+        this.props.onSelectedTypeChanged(item, index);
     }
 }
 
@@ -74,6 +75,7 @@ TypeChoiceModal.propTypes = {
     testID: PropTypes.string,
     visible: PropTypes.bool,
     choiceList: PropTypes.array,
+    choiceIndex: PropTypes.number,
     onRequestClose: PropTypes.func,
     onSelectedTypeChanged: PropTypes.func
 };
