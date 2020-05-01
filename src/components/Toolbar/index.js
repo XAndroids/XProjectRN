@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 const Toolbar = (props) => {
     return (
         <ToolbarAndroid
+            testID={props.testID}
             style={{width: getWindowsWidth(), height: 55, backgroundColor: '#01A3AE'}}
             title={props.title}
             titleColor='white'

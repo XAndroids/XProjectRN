@@ -73,11 +73,12 @@ export default class Publisher extends Component {
                     onSelectedTypeChanged={this._onSelectedTypeChanged}/>
                 <View style={[styles.container, {flexDirection: 'column', backgroundColor: 'white'}]}>
                     {/* 标题栏 */}
-                    <Toolbar title={toolbarTitle} actions={toolbarActions}
+                    <Toolbar testID={'publisher_toolbar'} title={toolbarTitle} actions={toolbarActions}
                              isSearch={toolBarIsSearch} onActionSelected={this._onActionSelected}
                              onPressBack={this._onPressBack}/>
                     {/* 发布者列表 */}
                     <FlatList
+                        testID={'publisher_flatlist_publisherlist'}
                         data={showPublisherList}
                         renderItem={this._renderPublisherItem}
                         keyExtractor={(item, index) => index.toString()}
