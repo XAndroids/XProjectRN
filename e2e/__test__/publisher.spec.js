@@ -16,7 +16,7 @@ describe('Publisher', () => {
         await device.reloadReactNative();
     });
 
-    it.skip('should publisherlist request success and first show', async () => {
+    it('should publisherlist request success and first show', async () => {
         //修改Mock服务返回列表的长度
         mockServer.setPublisherLength(1);
         //打开Publisher页面
@@ -33,7 +33,7 @@ describe('Publisher', () => {
         mockServer.resetPublisherLength();
     });
 
-    it.skip('should publisherlist request success and scroll to end and last item show', async () => {
+    it('should publisherlist request success and scroll to end and last item show', async () => {
         //打开Publisher页面
         await openPublisherPage();
 
@@ -46,11 +46,11 @@ describe('Publisher', () => {
         await expect(element(by.text('Tech-mock'))).toBeNotVisible();
     });
 
-    it.skip("should item click and check item", async () => {
+    it("should item click and check item", async () => {
         //FIXME 无法验证选中
     });
 
-    it.skip("should publishertype show and select publishertype", async () => {
+    it("should publishertype show and select publishertype", async () => {
         //打开Publisher页面
         await openPublisherPage();
         //通过View Hierarchy日志查找type类型，x,y坐标等信息
