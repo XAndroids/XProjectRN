@@ -63,6 +63,11 @@ describe('Publisher', () => {
         await expect(element(by.text("Tech"))).toBeVisible();
         await expect(element(by.text("News"))).toBeVisible();
         await expect(element(by.text("Business"))).toBeVisible();
+
+        //FIXME 不进行后续操作，Reload会失败？？
+        await element(by.text('Tech')).tap();
+        await expect(element(by.text("Select Publisher"))).toBeNotVisible();
+        await expect(element(by.text('The Tech-mock'))).toBeVisible();
     });
 
     it("should languagetype show and select languagetype", async () => {
