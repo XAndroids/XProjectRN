@@ -8,4 +8,4 @@
 | ------------- |------------- |
 | master| 项目的最新稳定代码分支，主要用README.md更新和维护 |
 | react-stateprops| 该分支使用state-props实现基础功能，搭建了Detox、Jest等基础环境 |
-| react-detox| 该分支基于state-props分支开发，实践Detox自动化测试 |
+| react-test-detox| 该分支基于state-props分支开发，实践Detox自动化测试 |
