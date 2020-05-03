@@ -30,8 +30,9 @@ const RadioButton = (props) => {
     };
 
     return (
-        <TouchableOpacity style={[props.style, styles.radio, outerStyle]} onPress={onPress}>
-            {isSelected ? <View style={innerStyle}/> : null}
+        <TouchableOpacity testID="radiobutton_touchableopacity_outer" style={[props.style, styles.radio, outerStyle]}
+                          onPress={onPress}>
+            {isSelected ? <View testID="radiobutton_view_inner" style={innerStyle}/> : null}
         </TouchableOpacity>
     )
 };
