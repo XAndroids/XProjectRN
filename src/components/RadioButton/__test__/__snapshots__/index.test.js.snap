@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Button Snapshot test custom property Snapshot test 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "borderColor": "#bbbbbb",
+      "borderRadius": 5.1,
+      "borderWidth": 0.8999999999999999,
+      "height": 10.2,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 10.2,
+    }
+  }
+  testID="radiobutton_touchableopacity_outer"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#aaaaaa",
+        "borderRadius": 3,
+        "height": 6,
+        "width": 6,
+      }
+    }
+    testID="radiobutton_view_inner"
+  />
+</View>
+`;
+
+exports[`Radio Button Snapshot test default property Snapshot test 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "borderColor": "#058b7d",
+      "borderRadius": 13.6,
+      "borderWidth": 2.4,
+      "height": 27.2,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 27.2,
+    }
+  }
+  testID="radiobutton_touchableopacity_outer"
+/>
+`;

@@ -95,3 +95,18 @@ describe('Radio Button fun test', () => {
         expect(fn).toHaveBeenCalled();
     });
 });
+
+describe('Radio Button Snapshot test', () => {
+    //使用不同的属性配置，生成镜像，覆盖更多的代码
+    test('default property Snapshot test', () => {
+        const {toJSON} = render(<RadioButton/>);
+        expect(toJSON()).toMatchSnapshot();
+    });
+
+    test('custom property Snapshot test', () => {
+        const fn = jest.fn();
+        const {toJSON} = render(<RadioButton isSelected={true} size={6} innerColor={'#aaaaaa'} outerColor={'#bbbbbb'}
+                                             onPress={fn}/>);
+        expect(toJSON()).toMatchSnapshot();
+    });
+});
