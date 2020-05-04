@@ -3,7 +3,8 @@ import {render} from "react-native-testing-library";
 import RadioButton from "../index";
 
 describe('Radio Button property test', () => {
-    test('property default test', () => {
+    test('property default outer test', () => {
+        //外部元素默认样式测试
         const {getByTestId, queryByTestId} = render(<RadioButton/>);
         const outComponent = getByTestId('radiobutton_touchableopacity_outer');
 
@@ -22,6 +23,22 @@ describe('Radio Button property test', () => {
         expect(outStyles.height).toBe(27.2);
         expect(outStyles.borderRadius).toBe(13.6);
         expect(outStyles.borderWidth).toBe(2.4);
+    });
+
+    test('property default inner test', () => {
+        //内部元素默认样式测试
+        const {getByTestId} = render(<RadioButton isSelected={true}/>);
+        const innerComponent = getByTestId('radiobutton_view_inner');
+
+        //内部元素存在
+        expect(getByTestId('radiobutton_view_inner')).toBe(innerComponent);
+
+        //内部元素默认样式
+        const innerStyles = innerComponent.props.style;
+        expect(innerStyles.width).toBe(16);
+        expect(innerStyles.height).toBe(16);
+        expect(innerStyles.borderRadius).toBe(8);
+        expect(innerStyles.backgroundColor).toBe('#058b7d');
     });
 
     test('size property test', () => {
@@ -66,5 +83,15 @@ describe('Radio Button property test', () => {
 
         const {queryByTestId} = render(<RadioButton isSelected={false}/>);
         expect(queryByTestId('radiobutton_view_inner')).toBeNull();
+    });
+});
+
+describe('Radio Button fun test', () => {
+    test('onPress fun test', () => {
+        const fn = jest.fn();
+        const {getByTestId} = render(<RadioButton onPress={fn}/>);
+        const outComponent = getByTestId('radiobutton_touchableopacity_outer');
+        outComponent.props.onPress();
+        expect(fn).toHaveBeenCalled();
     });
 });
