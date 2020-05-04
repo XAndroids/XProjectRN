@@ -1,5 +1,5 @@
 import React from "react";
-import {render, shallow} from "react-native-testing-library";
+import {render, shallow, fireEvent} from "react-native-testing-library";
 import RadioButton from "../index";
 
 describe('Radio Button property test', () => {
@@ -88,12 +88,44 @@ describe('Radio Button property test', () => {
 });
 
 describe('Radio Button fun test', () => {
-    test('onPress fun test', () => {
+    test('onPress fun not invode test', () => {
+        const fn = jest.fn();
+        render(<RadioButton onPress={fn}/>);
+        //检验事件么有被调用
+        expect(fn).not.toHaveBeenCalled();
+    });
+
+    test('onPress fun invode test', () => {
         const fn = jest.fn();
         const {getByTestId} = render(<RadioButton onPress={fn}/>);
         const outComponent = getByTestId('radiobutton_touchableopacity_outer');
+        //通过props.onPress()调用
         outComponent.props.onPress();
+        //检验事件被调用
         expect(fn).toHaveBeenCalled();
+    });
+
+    test('onPress fun invoke with data test', () => {
+        const fn = jest.fn();
+        const EVENT_DATA = 'event data';
+        const {getByTestId} = render(<RadioButton onPress={fn}/>);
+        //通过fireEvent携带数据调用onPress
+        fireEvent(getByTestId('radiobutton_touchableopacity_outer'), 'onPress', EVENT_DATA);
+        expect(fn).toHaveBeenCalledWith(EVENT_DATA);
+    });
+
+    test('onPress fun invoke test2', () => {
+        const fn = jest.fn();
+        const {getByTestId} = render(<RadioButton onPress={fn}/>);
+        //通过fireEvent.press()调用OnPress
+        fireEvent.press(getByTestId('radiobutton_touchableopacity_outer'));
+        fireEvent.press(getByTestId('radiobutton_touchableopacity_outer'));
+        expect(fn).toHaveBeenCalledTimes(2);
+
+        //没有事件aaa抛出异常
+        expect(() => fireEvent(getByTestId('radiobutton_touchableopacity_outer'), 'aaa')).toThrow(
+            'No handler function found for event: \"aaa\"'
+        );
     });
 });
 
@@ -116,6 +148,7 @@ describe('Radio Button Shallow test', () => {
     test('default property radio button Shallow snapshot test', () => {
         const fn = jest.fn();
         //shallow底层调用react-test-render/shallow
+        //参考：https://zh-hans.reactjs.org/docs/shallow-renderer.html
         const {output} = shallow(<RadioButton isSelected={true} size={6} innerColor={'#aaaaaa'} outerColor={'#bbbbbb'}
                                               onPress={fn}/>);
         //浅层渲染后，进行镜像测试

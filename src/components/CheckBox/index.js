@@ -10,15 +10,15 @@ const CheckBox = (props) => {
 
     return (
         <TouchableOpacity onPress={props.onCheckedChange}>
-            <Image style={[props.style]} source={icon}/>
+            <Image testID={'checkbox_image'} style={[props.style]} source={icon}/>
         </TouchableOpacity>
     );
 };
 
 CheckBox.propTypes = {
-    isChecked: PropTypes.bool,
-    checkedIcon: PropTypes.number,//FIXME 这是用PropTypes.object检测是否合适？？
-    uncheckedIcon: PropTypes.number,
+    isChecked: PropTypes.bool.isRequired,//没有默认值，都声明呈required
+    checkedIcon: PropTypes.object.isRequired,//FIXME 这是用PropTypes.object检测是否合适？？
+    uncheckedIcon: PropTypes.object.isRequired,
     onCheckedChange: PropTypes.func
 };
 
