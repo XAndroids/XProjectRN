@@ -1,5 +1,5 @@
 import React from "react";
-import {render} from "react-native-testing-library";
+import {render, shallow} from "react-native-testing-library";
 import RadioButton from "../index";
 
 describe('Radio Button property test', () => {
@@ -77,6 +77,7 @@ describe('Radio Button property test', () => {
     });
 
     test('isSelected property test', () => {
+        //FIXME getByName不能使用？？
         const {getByTestId} = render(<RadioButton isSelected={true}/>);
         const innerComponent = getByTestId('radiobutton_view_inner');
         expect(getByTestId('radiobutton_view_inner')).toBe(innerComponent);
@@ -108,5 +109,31 @@ describe('Radio Button Snapshot test', () => {
         const {toJSON} = render(<RadioButton isSelected={true} size={6} innerColor={'#aaaaaa'} outerColor={'#bbbbbb'}
                                              onPress={fn}/>);
         expect(toJSON()).toMatchSnapshot();
+    });
+});
+
+describe('Radio Button Shallow test', () => {
+    test('default property radio button Shallow snapshot test', () => {
+        const fn = jest.fn();
+        //shallow底层调用react-test-render/shallow
+        const {output} = shallow(<RadioButton isSelected={true} size={6} innerColor={'#aaaaaa'} outerColor={'#bbbbbb'}
+                                              onPress={fn}/>);
+        //浅层渲染后，进行镜像测试
+        expect(output).toMatchSnapshot();
+    });
+
+    test('inner component Shallow snapshot test', () => {
+        const {getByTestId} = render(<RadioButton isSelected={true}/>);
+        //指定"层"子组件进行浅层测试
+        const {output} = shallow(getByTestId('radiobutton_view_inner'));
+        expect(output).toMatchSnapshot();
+    });
+
+    test('default property radio button Shallow test', () => {
+        const fn = jest.fn();
+        const {output} = shallow(<RadioButton isSelected={true} size={6} innerColor={'#aaaaaa'} outerColor={'#bbbbbb'}
+                                              onPress={fn}/>);
+        //浅层渲染后，进行元素的expect
+        expect(output.type.displayName).toBe('TouchableOpacity');
     });
 });

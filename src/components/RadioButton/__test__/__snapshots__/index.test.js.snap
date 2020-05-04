@@ -1,5 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Radio Button Shallow test default property radio button Shallow snapshot test 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+  style={
+    Array [
+      undefined,
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "justifyContent": "center",
+      },
+      Object {
+        "borderColor": "#bbbbbb",
+        "borderRadius": 5.1,
+        "borderWidth": 0.8999999999999999,
+        "height": 10.2,
+        "width": 10.2,
+      },
+    ]
+  }
+  testID="radiobutton_touchableopacity_outer"
+>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#aaaaaa",
+        "borderRadius": 3,
+        "height": 6,
+        "width": 6,
+      }
+    }
+    testID="radiobutton_view_inner"
+  />
+</TouchableOpacity>
+`;
+
+exports[`Radio Button Shallow test default property radio button Shallow test 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+  style={
+    Array [
+      undefined,
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "justifyContent": "center",
+      },
+      Object {
+        "borderColor": "#bbbbbb",
+        "borderRadius": 5.1,
+        "borderWidth": 0.8999999999999999,
+        "height": 10.2,
+        "width": 10.2,
+      },
+    ]
+  }
+  testID="radiobutton_touchableopacity_outer"
+>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#aaaaaa",
+        "borderRadius": 3,
+        "height": 6,
+        "width": 6,
+      }
+    }
+    testID="radiobutton_view_inner"
+  />
+</TouchableOpacity>
+`;
+
+exports[`Radio Button Shallow test inner component Shallow snapshot test 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#058b7d",
+      "borderRadius": 8,
+      "height": 16,
+      "width": 16,
+    }
+  }
+  testID="radiobutton_view_inner"
+/>
+`;
+
+exports[`Radio Button Shallow test inner component Shallow test 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#058b7d",
+      "borderRadius": 8,
+      "height": 16,
+      "width": 16,
+    }
+  }
+  testID="radiobutton_view_inner"
+/>
+`;
+
 exports[`Radio Button Snapshot test custom property Snapshot test 1`] = `
 <View
   accessible={true}
