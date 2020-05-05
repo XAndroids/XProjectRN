@@ -2,7 +2,7 @@ import CheckBox from './CheckBox'
 import Indicator from './Indicator'
 import RadioButton from './RadioButton'
 import Toolbar from './Toolbar'
-import TypeChoiceModal from './TypeChoiceModal'
+import ChoiceModal from './ChoiceModal'
 import ViewPager from './ViewPager'
 import CardView from './CardView'
 import SnackBar from "./SnackBar";
@@ -12,7 +12,7 @@ export {
     Indicator,
     RadioButton,
     Toolbar,
-    TypeChoiceModal,
+    ChoiceModal,
     ViewPager,
     CardView,
     SnackBar

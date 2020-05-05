@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, FlatList, StyleSheet, Alert, Image} from 'react-native'
-import {TypeChoiceModal, Toolbar, SnackBar} from '../../components'
+import {ChoiceModal, Toolbar, SnackBar} from '../../components'
 import PublisherItem from "./PublisherItem";
 import {toolbarActions} from "./PublisherData"
 
@@ -64,7 +64,7 @@ export default class Publisher extends Component {
         return (
             <View style={styles.container}>
                 {/* 内容和语言选择Modal */}
-                <TypeChoiceModal
+                <ChoiceModal
                     testID={'publisher_modal_typechoice'}
                     visible={typeChoiceModalVisible}
                     choiceList={typeChoiceList}
