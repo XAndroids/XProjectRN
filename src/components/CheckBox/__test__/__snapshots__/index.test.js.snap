@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox Shallow test Shallow test 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[MockFunction]}
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../img/publisherlist_checkbox_selected.png",
+      }
+    }
+    style={
+      Array [
+        undefined,
+      ]
+    }
+    testID="checkbox_image"
+  />
+</TouchableOpacity>
+`;
+
+exports[`CheckBox Snapshot test Snapshot test 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../img/publisherlist_checkbox_selected.png",
+      }
+    }
+    style={
+      Array [
+        undefined,
+      ]
+    }
+    testID="checkbox_image"
+  />
+</View>
+`;
