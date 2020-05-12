@@ -9,6 +9,9 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 注册SnackbarModule
+ */
 public class SnackbarPackage implements ReactPackage {
 
     @Override

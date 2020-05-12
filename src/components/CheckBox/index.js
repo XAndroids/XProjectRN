@@ -17,8 +17,8 @@ const CheckBox = (props) => {
 
 CheckBox.propTypes = {
     isChecked: PropTypes.bool.isRequired,//没有默认值，都声明呈required
-    checkedIcon: PropTypes.object.isRequired,//FIXME 这是用PropTypes.object检测是否合适？？
-    uncheckedIcon: PropTypes.object.isRequired,
+    checkedIcon: PropTypes.number.isRequired,//FIXME 这是用PropTypes.object检测是否合适？？
+    uncheckedIcon: PropTypes.number.isRequired,
     onCheckedChange: PropTypes.func
 };
 

@@ -30,7 +30,8 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "<rootDir>/setup-tests.js"
+      "<rootDir>/setup-tests.js",
+      "<rootDir>/src/components/SnackBar/__mocks__/mock.js"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"

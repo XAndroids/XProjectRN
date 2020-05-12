@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 /**
  * 单选Modal
  */
-export default class TypeChoiceModal extends Component {
+export default class ChoiceModal extends Component {
     constructor(props) {
         super(props);
         this._onTypeItemPress = this._onTypeItemPress.bind(this)
@@ -71,10 +71,15 @@ export default class TypeChoiceModal extends Component {
     }
 }
 
-TypeChoiceModal.propTypes = {
+ChoiceModal.defaultProps = {
+    visible: false,
+    choiceIndex: -1,
+};
+
+ChoiceModal.propTypes = {
     testID: PropTypes.string,
     visible: PropTypes.bool,
-    choiceList: PropTypes.array,
+    choiceList: PropTypes.array.isRequired,
     choiceIndex: PropTypes.number,
     onRequestClose: PropTypes.func,
     onSelectedTypeChanged: PropTypes.func
