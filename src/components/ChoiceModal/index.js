@@ -53,9 +53,9 @@ export default class ChoiceModal extends Component {
         return (
             <TouchableWithoutFeedback onPress={() => this._onTypeItemPress(item, index)}>
                 <View style={{flexDirection: 'row', height: 47}}>
-                    <RadioButton style={{marginLeft: 23, marginRight: 23}} isSelected={this.props.choiceIndex === index}
-                                 size={12}/>
-                    <Text style={{
+                    <RadioButton style={{marginLeft: 23, marginRight: 23}}
+                                 isSelected={this.props.choiceIndex === index} size={12}/>
+                    <Text testID={'choicemodal_flatlistitem_text'} style={{
                         flex: 1,
                         color: 'black',
                         fontSize: 18,
