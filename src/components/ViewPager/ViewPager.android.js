@@ -7,7 +7,6 @@ export default class ViewPager extends Component {
     render() {
         return (
             //使用ViewPagerAndroid在Android平台渲染
-            //FIXME 为什么this.props.showPageIndex刷新了，ViewPagerAndroid页面不更新???
             <ViewPagerAndroid
                 ref={this.props.viewPagerRef}
                 initialPage={this.props.initPageIndex}
@@ -35,11 +34,6 @@ export default class ViewPager extends Component {
 
 //FIXME 如何在不同平台复用同样的propTypes、defaultProps和styles
 ViewPager.propTypes = {
-    showPageIndex: PropTypes.number,
     onPageSwitch: PropTypes.func
 
-};
-
-ViewPager.defaultProps = {
-    showPageIndex: 0
 };

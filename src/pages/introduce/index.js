@@ -51,7 +51,6 @@ export default class Introduce extends Component {
         return (
             <View style={{flex: 1}}>
                 <ViewPager initPageIndex={initPageIndex}
-                           showPageIndex={showPageIndex}
                            onPageSwitch={this._handlePageSwitch}
                            viewPagerRef={el => this.viewPagerElement = el}>
                     {this.pages.map((page, i) => <IntroducePage
