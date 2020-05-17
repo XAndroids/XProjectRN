@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar Shallow test Shallow test 1`] = `
+<UnimplementedView
+  actions={
+    Array [
+      Object {
+        "icon": Object {
+          "testUri": "../../../img/toolbar_menu_search.png",
+        },
+        "key": "001",
+        "show": "always",
+        "title": "Search",
+      },
+      Object {
+        "icon": Object {
+          "testUri": "../../../img/toolbar_menu_filter.png",
+        },
+        "key": "002",
+        "show": "always",
+        "title": "Content",
+      },
+      Object {
+        "icon": Object {
+          "testUri": "../../../img/toolbar_menu_language.png",
+        },
+        "key": "003",
+        "show": "always",
+        "title": "Language",
+      },
+    ]
+  }
+  onActionSelected={[MockFunction]}
+  style={
+    Object {
+      "backgroundColor": "#01A3AE",
+      "height": 55,
+      "width": 750,
+    }
+  }
+  testID="publisher_toolbar"
+  title="ToolbarTitle"
+  titleColor="white"
+>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#01A3AE",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[MockFunction]}
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../img/ic_action_name.png",
+          }
+        }
+      />
+    </TouchableOpacity>
+    <TextInput
+      allowFontScaling={true}
+      placeholder="搜索..."
+      placeholderTextColor="#6cc7cd"
+      style={
+        Object {
+          "flex": 1,
+          "fontSize": 18,
+          "marginLeft": 15,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+  </Component>
+</UnimplementedView>
+`;
+
+exports[`Toolbar Snapshot test Snapshot test 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "borderColor": "red",
+        "borderWidth": 1,
+      },
+      Object {
+        "backgroundColor": "#01A3AE",
+        "height": 55,
+        "width": 750,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#01A3AE",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../img/ic_action_name.png",
+          }
+        }
+      />
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      placeholder="搜索..."
+      placeholderTextColor="#6cc7cd"
+      style={
+        Object {
+          "flex": 1,
+          "fontSize": 18,
+          "marginLeft": 15,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</View>
+`;
