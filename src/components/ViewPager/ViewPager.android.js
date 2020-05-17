@@ -28,6 +28,8 @@ export default class ViewPager extends Component {
     }
 
     handlerPagerSwitch(event) {
+        //react-native-testing-library fun测试的时候，报错TypeError: Cannot read property 'nativeEvent' of undefined
+        //FIXME mock了onPageSwitch，但是如何mock event.nativeEvent呢？？？
         this.props.onPageSwitch(event.nativeEvent.position);
     }
 }
