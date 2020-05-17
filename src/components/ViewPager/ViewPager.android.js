@@ -34,6 +34,10 @@ export default class ViewPager extends Component {
 
 //FIXME 如何在不同平台复用同样的propTypes、defaultProps和styles
 ViewPager.propTypes = {
+    initPageIndex: PropTypes.number,
     onPageSwitch: PropTypes.func
+};
 
+ViewPager.defaultProps = {
+    initPageIndex: 0
 };
