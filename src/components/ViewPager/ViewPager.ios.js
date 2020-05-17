@@ -10,7 +10,7 @@ export default class ViewPager extends Component {
             //使用ScrollView在iOS平台上渲染
             <ScrollView
                 ref={this.props.viewPagerRef}
-                style={[styles.viewpager, this.props.style]}
+                style={styles.viewpager}
                 contentOffset={{x: getWindowsWidth() * this.props.initPageIndex, y: 0}}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}

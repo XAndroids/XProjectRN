@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { ViewPagerAndroid, View } from 'react-native'
+import React, {Component} from 'react'
+import {ViewPagerAndroid, View} from 'react-native'
 import PropTypes from 'prop-types'
-import { styles } from './styles'
+import {styles} from './styles'
 
 export default class ViewPager extends Component {
     render() {
@@ -10,7 +10,7 @@ export default class ViewPager extends Component {
             <ViewPagerAndroid
                 ref={this.props.viewPagerRef}
                 initialPage={this.props.initPageIndex}
-                style={[styles.viewpager, this.props.style]}
+                style={styles.viewpager}
                 onPageSelected={this.handlerPagerSwitch.bind(this)}>
                 {this.renderContent()}
             </ViewPagerAndroid>
