@@ -34,7 +34,6 @@ const SnackBar = {
                 textColor: actionTextColor,
             } : undefined,
         };
-        console.log(JSON.stringify(NativeModules));
         NativeModules.RNSnackbar.show(nativeOptions, onPressCallback);
     },
 

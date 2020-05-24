@@ -10,7 +10,7 @@ export default class Login extends Component {
         return (
             <ImageBackground testID='loginroot' style={styles.container}
                              source={require('../../../img/login_background.png')}>
-                <Image stestID='loginbutton' ource={require('../../../img/login_icon.png')}/>
+                <Image testID='loginimage' source={require('../../../img/login_icon.png')}/>
                 <TouchableOpacity testID='loginbutton'
                                   style={[styles.button, {marginTop: 40, backgroundColor: '#01A3AE'}]}
                                   onPress={this._onPressLogin}>

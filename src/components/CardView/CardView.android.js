@@ -1,6 +1,6 @@
 import React from 'react'
 import {StyleSheet} from 'react-native'
-import RNCardView from './RNCardView'
+import AndroidCardView from './AndroidCardView'
 import PropTypes from 'prop-types'
 
 export default class CardView extends React.Component {
@@ -15,9 +15,9 @@ export default class CardView extends React.Component {
         const {children, style, ...props} = this.props;
         const finalStyle = getFinalStyle(this.props, style);
         return (
-            <RNCardView style={finalStyle} {...props}>
+            <AndroidCardView style={finalStyle} {...props}>
                 {children}
-            </RNCardView>
+            </AndroidCardView>
         )
     }
 }
@@ -27,8 +27,10 @@ const getFinalStyle = (props, style = {}) => {
     const paddingBottom = 2 * cardElevation + radius;
 
     const computedStyle = StyleSheet.flatten(style);
+
     const keys = Object.keys(computedStyle);
     if (!keys || keys.length === 0) return {paddingBottom};
+
     const len = keys.length;
     let additionalStyle = {paddingBottom};
     for (let i = len - 1; i >= 0; i--) {
