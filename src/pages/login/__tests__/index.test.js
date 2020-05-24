@@ -1,6 +1,6 @@
 import React from "react";
 import Login from '../index';
-import {render} from "react-native-testing-library";
+import {render, shallow} from "react-native-testing-library";
 
 describe("login page test", () => {
     it("login page show test", () => {
@@ -35,7 +35,20 @@ describe("login page test", () => {
         const tryText = getByTestId('trytext')
         expect(tryText.props.style).toEqual({color: 'white'})
         expect(tryText.props.children).toBe('TRY THINGS OUT')
-
         //FIXME 不是外部传入的事件如何测试
+    })
+})
+
+describe("login page Snapshot test", () => {
+    it("login page Snapshot test", () => {
+        const {toJSON} = render(<Login/>)
+        expect(toJSON()).toMatchSnapshot()
+    })
+})
+
+describe("login page shallow test", () => {
+    it("login page shallow test", () => {
+        const {output} = shallow(<Login/>)
+        expect(output).toMatchSnapshot()
     })
 })

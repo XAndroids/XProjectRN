@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index Snapshot test correctly 1`] = `
+exports[`login page Snapshot test login page Snapshot test 1`] = `
 <View
   style={
     Object {
@@ -109,4 +109,91 @@ exports[`index Snapshot test correctly 1`] = `
     </Text>
   </View>
 </View>
+`;
+
+exports[`login page shallow test login page shallow test 1`] = `
+<ImageBackground
+  source={
+    Object {
+      "testUri": "../../../img/login_background.png",
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+  testID="loginroot"
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../img/login_icon.png",
+      }
+    }
+    testID="loginimage"
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 50,
+          "justifyContent": "center",
+          "width": 250,
+        },
+        Object {
+          "backgroundColor": "#01A3AE",
+          "marginTop": 40,
+        },
+      ]
+    }
+    testID="loginbutton"
+  >
+    <Component
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+      testID="logintext"
+    >
+      LOGIN TO FEEDLY
+    </Component>
+  </TouchableOpacity>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 50,
+          "justifyContent": "center",
+          "width": 250,
+        },
+        Object {
+          "backgroundColor": "#AAAAAA",
+          "marginTop": 8,
+        },
+      ]
+    }
+    testID="trybutton"
+  >
+    <Component
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+      testID="trytext"
+    >
+      TRY THINGS OUT
+    </Component>
+  </TouchableOpacity>
+</ImageBackground>
 `;
