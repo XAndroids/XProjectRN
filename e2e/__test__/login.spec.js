@@ -8,9 +8,8 @@ describe('Login', () => {
         //Login根视图可见
         await expect(element(by.id('loginroot'))).toBeVisible();
 
-        //图片显示成功，使用by.type依赖于native的类型
-        const byType = device.getPlatform() === 'ios' ? by.type('RCTImageView') : by.type('android.widget.ImageView');
-        await expect(element(byType)).toBeVisible();
+        //图片显示成功
+        await expect(element(by.id('loginimage'))).toBeVisible();
 
         //Login按钮可见，并且展示LOGIN TO FEEDLY文案
         await expect(element(by.id('loginbutton'))).toBeVisible();
