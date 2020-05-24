@@ -12,7 +12,7 @@ const Indicator = (props) => {
         if (i === currentIndex) {
             style = [styles.circle, styles.circleSelected];
         }
-        circles.push(<View style={style} key={i}/>);
+        circles.push(<View testID={'indicator_view'} style={style} key={i}/>);
     }
 
     return (

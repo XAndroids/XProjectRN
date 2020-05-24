@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Indicator Shallow test Indicator Shallow test 1`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 5,
+        "height": 10,
+        "marginHorizontal": 5,
+        "width": 10,
+      }
+    }
+    testID="indicator_view"
+  />
+  <Component
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": 5,
+          "height": 10,
+          "marginHorizontal": 5,
+          "width": 10,
+        },
+        Object {
+          "backgroundColor": "#0f0",
+        },
+      ]
+    }
+    testID="indicator_view"
+  />
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 5,
+        "height": 10,
+        "marginHorizontal": 5,
+        "width": 10,
+      }
+    }
+    testID="indicator_view"
+  />
+</Component>
+`;
+
+exports[`Indicator Snapshot test Indicator Snapshot test  1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 5,
+        "height": 10,
+        "marginHorizontal": 5,
+        "width": 10,
+      }
+    }
+    testID="indicator_view"
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": 5,
+          "height": 10,
+          "marginHorizontal": 5,
+          "width": 10,
+        },
+        Object {
+          "backgroundColor": "#0f0",
+        },
+      ]
+    }
+    testID="indicator_view"
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 5,
+        "height": 10,
+        "marginHorizontal": 5,
+        "width": 10,
+      }
+    }
+    testID="indicator_view"
+  />
+</View>
+`;
