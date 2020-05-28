@@ -39,7 +39,7 @@ export default class IntroduceBar extends Component {
 
         if (showPageIndex === 0 || showPageIndex === 1) {
             return (
-                <TouchableOpacity style={styles.touchable} onPress={this._onSkipPress}>
+                <TouchableOpacity testID={'introduce_button_skip'} style={styles.touchable} onPress={this._onSkipPress}>
                     <Text testID='skip' style={[styles.text, {alignSelf: 'flex-start', marginLeft: 30}]}>SKIP</Text>
                 </TouchableOpacity>
             );
@@ -64,7 +64,7 @@ export default class IntroduceBar extends Component {
             return (
                 <TouchableOpacity style={styles.touchable} onPress={this._onDonePress}>
                     <Text style={[styles.text, {alignSelf: 'flex-end', marginRight: 30}]}>DONE</Text>
-                </ TouchableOpacity>
+                </TouchableOpacity>
             );
         }
 
