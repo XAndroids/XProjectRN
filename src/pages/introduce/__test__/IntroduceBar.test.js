@@ -1,5 +1,5 @@
 import React from "react";
-import {fireEvent, render} from "react-native-testing-library";
+import {fireEvent, render, shallow} from "react-native-testing-library";
 import {Image} from "react-native"
 import IntroduceBar from "../IntroduceBar";
 import {Indicator} from "../../../components";
@@ -56,6 +56,30 @@ describe("IntroduceBar test", () => {
                                                          onNextPress={onNextPress}/>)
             fireEvent(queryByTestId('introduce_button_next'),'onPress')
             expect(onNextPress).toHaveBeenCalled()
+        })
+    })
+
+    describe("IntroduceBar Snapshot test", () => {
+        it("IntroduceBar Snapshot test", () => {
+            const onNextPress = jest.fn()
+            const showPageIndex = 1;
+            const showPageCount = 3;
+            const {toJSON} = render(<IntroduceBar showPageIndex={showPageIndex}
+                                                  showPageCount={showPageCount}
+                                                  onNextPress={onNextPress}/>)
+            expect(toJSON()).toMatchSnapshot()
+        })
+    })
+
+    describe("IntroduceBar shallow test", () => {
+        it("IntroduceBar shallow test", () => {
+            const onNextPress = jest.fn()
+            const showPageIndex = 1;
+            const showPageCount = 3;
+            const {output} = render(<IntroduceBar showPageIndex={showPageIndex}
+                                                  showPageCount={showPageCount}
+                                                  onNextPress={onNextPress}/>)
+            expect(output).toMatchSnapshot()
         })
     })
 })

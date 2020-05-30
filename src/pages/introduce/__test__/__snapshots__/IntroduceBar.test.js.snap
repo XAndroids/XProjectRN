@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntroduceBar test IntroduceBar Snapshot test IntroduceBar Snapshot test 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "width": 750,
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "opacity": 1,
+      }
+    }
+    testID="introduce_button_skip"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+          },
+          Object {
+            "alignSelf": "flex-start",
+            "marginLeft": 30,
+          },
+        ]
+      }
+      testID="skip"
+    >
+      SKIP
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": 5,
+          "height": 10,
+          "marginHorizontal": 5,
+          "width": 10,
+        }
+      }
+      testID="indicator_view"
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 5,
+            "height": 10,
+            "marginHorizontal": 5,
+            "width": 10,
+          },
+          Object {
+            "backgroundColor": "#0f0",
+          },
+        ]
+      }
+      testID="indicator_view"
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#fff",
+          "borderRadius": 5,
+          "height": 10,
+          "marginHorizontal": 5,
+          "width": 10,
+        }
+      }
+      testID="indicator_view"
+    />
+  </View>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 1,
+        "opacity": 1,
+      }
+    }
+    testID="introduce_button_next"
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../img/introduce_nextbutton_background.png",
+        }
+      }
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`IntroduceBar test IntroduceBar shallow test IntroduceBar shallow test 1`] = `undefined`;
