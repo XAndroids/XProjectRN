@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, FlatList, StyleSheet, Alert, Image} from 'react-native'
+import {View, FlatList, StyleSheet} from 'react-native'
 import {ChoiceModal, Toolbar, SnackBar} from '../../components'
 import PublisherItem from "./PublisherItem";
 import {toolbarActions} from "./PublisherData"

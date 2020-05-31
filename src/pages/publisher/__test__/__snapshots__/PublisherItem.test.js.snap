@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 0,
+        "shadowColor": "rgba(96,96,96,1)",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.13,
+        "shadowRadius": 2,
+      },
+      Object {},
+      Object {
+        "backgroundColor": "#00000000",
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "padding": 6,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../img/login_icon.png",
+        }
+      }
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginLeft": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+          }
+        }
+      >
+        The Tech-mock
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#73737373",
+            "fontSize": 12,
+          }
+        }
+      >
+        970601 subscribers
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../img/publisherlist_checkbox_add.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 50,
+              "marginRight": 6,
+              "width": 50,
+            },
+          ]
+        }
+        testID="checkbox_image"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[` 2`] = `
+<CardView
+  backgroundColor="#00000000"
+  cardElevation={2}
+>
+  <Component
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "padding": 6,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../img/login_icon.png",
+        }
+      }
+      style={
+        Object {
+          "height": 50,
+          "width": 50,
+        }
+      }
+    />
+    <Component
+      style={
+        Object {
+          "flex": 1,
+          "marginLeft": 8,
+        }
+      }
+    >
+      <Component
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 18,
+          }
+        }
+      >
+        The Tech-mock
+      </Component>
+      <Component
+        style={
+          Object {
+            "color": "#73737373",
+            "fontSize": 12,
+          }
+        }
+      >
+        970601 subscribers
+      </Component>
+    </Component>
+    <CheckBox
+      checkedIcon={
+        Object {
+          "testUri": "../../../img/publisherlist_checkbox_selected.png",
+        }
+      }
+      isChecked={false}
+      onCheckedChange={[Function]}
+      style={
+        Object {
+          "height": 50,
+          "marginRight": 6,
+          "width": 50,
+        }
+      }
+      uncheckedIcon={
+        Object {
+          "testUri": "../../../img/publisherlist_checkbox_add.png",
+        }
+      }
+    />
+  </Component>
+</CardView>
+`;
