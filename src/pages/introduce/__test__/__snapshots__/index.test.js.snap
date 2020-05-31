@@ -1,0 +1,485 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    contentOffset={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    horizontal={true}
+    onMomentumScrollEnd={[Function]}
+    pagingEnabled={true}
+    showsHorizontalScrollIndicator={false}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "#01A3AE",
+              "height": 1334,
+              "width": 750,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 28,
+                },
+              ]
+            }
+          >
+            Welcome
+          </Text>
+        </View>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../img/introduce_icon1.png",
+            }
+          }
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            Thank you for installing Paperboy.What makes Paperboy different form other news reader apps is its simplicity and elegant design.
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.1)",
+              "height": 1,
+              "marginBottom": 50,
+              "marginTop": 20,
+              "width": 750,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "#4CAF50",
+              "height": 1334,
+              "width": 750,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 28,
+                },
+              ]
+            }
+          >
+            Customizations
+          </Text>
+        </View>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../img/introduce_icon2.png",
+            }
+          }
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            We believe that each user is unique and hence several customization options are provided to suit different reading styles.To customize please visit the settings page.
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.1)",
+              "height": 1,
+              "marginBottom": 50,
+              "marginTop": 20,
+              "width": 750,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "#673AB8",
+              "height": 1334,
+              "width": 750,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 28,
+                },
+              ]
+            }
+          >
+            Reading pattern learner
+          </Text>
+        </View>
+        <Image
+          source={
+            Object {
+              "testUri": "../../../img/introduce_icon3.png",
+            }
+          }
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "justifyContent": "flex-end",
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            The home screen tiles will automatically reaarrange based on reading patterns for better user experence.All data is stored locally kepping in mind user privacy.
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(0, 0, 0, 0.1)",
+              "height": 1,
+              "marginBottom": 50,
+              "marginTop": 20,
+              "width": 750,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "position": "absolute",
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 50,
+          "width": 750,
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+      testID="introduce_button_skip"
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "white",
+            },
+            Object {
+              "alignSelf": "flex-start",
+              "marginLeft": 30,
+            },
+          ]
+        }
+        testID="skip"
+      >
+        SKIP
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#fff",
+              "borderRadius": 5,
+              "height": 10,
+              "marginHorizontal": 5,
+              "width": 10,
+            },
+            Object {
+              "backgroundColor": "#0f0",
+            },
+          ]
+        }
+        testID="indicator_view"
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 5,
+            "height": 10,
+            "marginHorizontal": 5,
+            "width": 10,
+          }
+        }
+        testID="indicator_view"
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 5,
+            "height": 10,
+            "marginHorizontal": 5,
+            "width": 10,
+          }
+        }
+        testID="indicator_view"
+      />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "opacity": 1,
+        }
+      }
+      testID="introduce_button_next"
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../img/introduce_nextbutton_background.png",
+          }
+        }
+        style={
+          Object {
+            "alignSelf": "flex-end",
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[` 2`] = `
+<Component
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ViewPager
+    initPageIndex={0}
+    onPageSwitch={[Function]}
+    viewPagerRef={[Function]}
+  >
+    <IntroducePage
+      backgroundColor="#01A3AE"
+      content="Thank you for installing Paperboy.What makes Paperboy different form other news reader apps is its simplicity and elegant design."
+      image={
+        Object {
+          "testUri": "../../../img/introduce_icon1.png",
+        }
+      }
+      title="Welcome"
+    />
+    <IntroducePage
+      backgroundColor="#4CAF50"
+      content="We believe that each user is unique and hence several customization options are provided to suit different reading styles.To customize please visit the settings page."
+      image={
+        Object {
+          "testUri": "../../../img/introduce_icon2.png",
+        }
+      }
+      title="Customizations"
+    />
+    <IntroducePage
+      backgroundColor="#673AB8"
+      content="The home screen tiles will automatically reaarrange based on reading patterns for better user experence.All data is stored locally kepping in mind user privacy."
+      image={
+        Object {
+          "testUri": "../../../img/introduce_icon3.png",
+        }
+      }
+      title="Reading pattern learner"
+    />
+  </ViewPager>
+  <IntroduceBar
+    onNextPress={[Function]}
+    showPageCount={3}
+    showPageIndex={0}
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+      }
+    }
+  />
+</Component>
+`;
